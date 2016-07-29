@@ -21,9 +21,7 @@ module.exports = {
 	},
 
     page: function( req, res) {
-
         res.view("userPage");
-
     },
 
     create: function(req, res){
