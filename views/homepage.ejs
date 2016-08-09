@@ -10,12 +10,18 @@
 
 <script>
   function taskController($scope) {
-    io.socket.on("connect", function () {
-      io.socket.get("/task", function (tasks) {
-        $scope.tasks = tasks;
-        $scope.$apply();
-      });
-    });
+    
+//    io.socket.on("connect", function () {
+//      io.socket.get("/task", function (tasks) {
+//        $scope.tasks = tasks;
+//        $scope.$apply();
+//     });
+//    });
+
+    io.socket.get("/task", function (tasks) {
+      $scope.tasks = tasks
+      $scope.$apply()
+    })
 
     $scope.submitHandler = function() {
       io.socket.post("/task", {
